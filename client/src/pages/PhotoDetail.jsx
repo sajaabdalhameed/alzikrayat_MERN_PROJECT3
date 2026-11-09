@@ -162,4 +162,4 @@ export default function PhotoDetail() {
       </div>
     </div>
   );
-}
+} 
