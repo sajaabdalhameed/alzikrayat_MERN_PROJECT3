@@ -32,4 +32,4 @@ app.use(errorHandler);
 
 mongoose.connect(process.env.MONGODB_URI)
   .then(() => server.listen(process.env.PORT || 5000, () => console.log(`Server running on port ${process.env.PORT || 5000}`)))
-  .catch((err) => { console.error('DB connection failed:', err.message); process.exit(1); });
+  .catch((err) => { console.error('DB connection failed:', err.message); process.exit(1); }); 
