@@ -16,4 +16,4 @@ exports.create = async (req, res, next) => {
 
     res.status(201).json(comment);
   } catch (err) { next(err); }
-};
+}; 
