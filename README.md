@@ -1,3 +1,5 @@
+#Name : Saja abdalhameed _ IT _semster 7
+
 # Alzikrayat — MERN Edition
 
 Full-stack photo sharing app: React (Vite) + Express + MongoDB (Mongoose).
@@ -38,6 +40,13 @@ Full-stack photo sharing app: React (Vite) + Express + MongoDB (Mongoose).
 | DELETE | /api/photos/:id (owner only) | yes |
 | POST | /api/photos/:id/comments | yes |
 | GET | /api/stats | no |
+
+## Features & Bonus Implementations
+- Full MERN Stack (React, Express, Node, MongoDB).
+- **JWT Authentication:** Secure login and register using JSON Web Tokens.
+- **Likes System:** Users can like/unlike photos.
+- **Real-time Comments:** Live comment updates using Socket.io.
+- **Responsive UI:** Mobile-friendly design with Dark Mode toggle, and Copy/Download photo features.
 
 ## Authentication note
 Per Project 3, only basic auth is implemented: passwords are hashed with bcrypt, the client keeps the logged-in
