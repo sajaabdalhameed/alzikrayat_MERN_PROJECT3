@@ -1,0 +1,57 @@
+/**
+ * Responsive tweaks for Alzikrayat, layered on top of Bootstrap's grid.
+ * Grid-mode thumbnails (.gallery-thumb) scale per breakpoint; list-mode
+ * thumbnails (.gallery-thumb-list) keep a fixed small size.
+ */
+.gallery-thumb { width: 100%; height: 220px; object-fit: cover; }
+.gallery-thumb-list { width: 160px; min-width: 160px; height: 120px; object-fit: cover; }
+
+/* Phones, portrait */
+@media (max-width: 575.98px) {
+  .navbar-brand { font-size: 1.1rem; }
+  .gallery-thumb { height: 160px; }
+  .gallery-thumb-list { width: 110px; min-width: 110px; height: 90px; }
+  .display-5 { font-size: 1.75rem; }
+}
+
+/* Phones, landscape: shorter viewport */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .p-5.bg-dark { padding: 1.5rem !important; }
+  .gallery-thumb { height: 140px; }
+}
+
+/* Tablets */
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .gallery-thumb { height: 190px; }
+}
+
+/* Small desktops */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .gallery-thumb { height: 210px; }
+}
+
+/* Large desktops */
+@media (min-width: 1200px) {
+  .gallery-thumb { height: 240px; }
+  .container { max-width: 1140px; }
+}
+
+/* =========================================
+   NEW FEATURES (Hover Effects)
+   ========================================= */
+
+/* Hover Zoom Effect for Photos */
+.gallery-thumb, .gallery-thumb-list {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover .gallery-thumb,
+.card:hover .gallery-thumb-list {
+  transform: scale(1.05); /* تكبير الصورة بنسبة 5% */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* إضافة ظل خفيف */
+}
+
+/* Needed to keep zoom effect inside the card corners */
+.gallery-card {
+  overflow: hidden;
+}
