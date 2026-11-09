@@ -33,4 +33,4 @@ exports.login = async (req, res, next) => {
       user: publicProfile(user)
     });
   } catch (err) { next(err); }
-};
+}; 
