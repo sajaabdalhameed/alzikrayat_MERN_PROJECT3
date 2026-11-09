@@ -52,3 +52,4 @@ Full-stack photo sharing app: React (Vite) + Express + MongoDB (Mongoose).
 Per Project 3, only basic auth is implemented: passwords are hashed with bcrypt, the client keeps the logged-in
 user in React state/localStorage and sends the user id in an `x-user-id` header, which the server verifies.
 This is intentionally simpler than JWT (an optional Project 4 feature) and is not production-grade security.
+ 
