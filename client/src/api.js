@@ -24,4 +24,4 @@ export async function api(path, { method = 'GET', body, form } = {}) {
   return data;
 }
 
-export const imgUrl = (fileName) => '/uploads/' + fileName;
+export const imgUrl = (fileName) => '/uploads/' + fileName; 
