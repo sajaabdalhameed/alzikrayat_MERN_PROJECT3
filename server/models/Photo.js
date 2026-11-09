@@ -9,4 +9,4 @@ const photoSchema = new mongoose.Schema({
   likes: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }] // Array of user IDs who liked the photo
 });
 
-module.exports = mongoose.model('Photo', photoSchema);
+module.exports = mongoose.model('Photo', photoSchema); 
