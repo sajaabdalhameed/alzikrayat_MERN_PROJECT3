@@ -77,4 +77,4 @@ exports.toggleLike = async (req, res, next) => {
     // Return the updated likes array so the frontend can update its state
     res.json({ likes: photo.likes }); 
   } catch (err) { next(err); }
-};
+}; 
