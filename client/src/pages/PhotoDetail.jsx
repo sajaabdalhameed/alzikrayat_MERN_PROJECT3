@@ -34,7 +34,9 @@ export default function PhotoDetail() {
     // Listen for new comments from other users
     socket.on('newComment', (newComment) => {
       if (newComment.photoId === id) {
-        setComments((prev) => [...prev, newComment]);
+        setComments((prev) =>
+          prev.some((c) => c._id === newComment._id) ? prev : [...prev, newComment]
+        );
       }
     });
 
@@ -70,8 +72,12 @@ export default function PhotoDetail() {
     if (!text.trim()) return setError('Comment text is required.');
     setPosting(true); setError('');
     try {
-      await api(`/photos/${id}/comments`, { method: 'POST', body: { comment: text } });
-      setText(''); // Clear input (Socket will handle adding it to the UI)
+      const created = await api(`/photos/${id}/comments`, { method: 'POST', body: { comment: text } });
+      // Show the new comment immediately from the API response (skip if the socket already added it)
+      setComments((prev) =>
+        prev.some((c) => c._id === created._id) ? prev : [...prev, created]
+      );
+      setText('');
     } catch (err) { 
       setError(err.message); 
     } finally { 
